@@ -3,12 +3,13 @@ runtime: python3
 build:
   commands:
     build:
-    - pip3 install pipenv
-    - python3 -m venv passwod-manager
+    - pip install pipenv
+    - python -m venv passwod-manager
     - source passwod-manager/bin/activate
-    - python3 -m pip install -r requirements.txt
+    - pip install --upgrade pip
+    - python -m pip install -r requirements.txt
     
 run:
-  command: python3 -m flask run --host=0.0.0.0 --port=8000
+  command: python -m flask run --host=0.0.0.0 --port=8000
   network:
     port: 8000
